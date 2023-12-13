@@ -1,0 +1,88 @@
+﻿<Window x:Class="TelephoneBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:local="clr-namespace:TelephoneBook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="LWindow" Visibility="Visible">
+            <Label Content="YouPupe" HorizontalAlignment="Center" Margin="0,113,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="logtbl" HorizontalAlignment="Center" Margin="0,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="logtbp" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="338,139,0,0" VerticalAlignment="Top"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="338,176,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="logbtn" Content="Войти" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" Background="#FFC87575" BorderBrush="#FFC87575" Foreground="Black" OpacityMask="#FF50A9A3" Click="logbtn_Click"/>
+            <Button x:Name="regsbtn" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Background="#FFC87575" BorderBrush="#FFC87575" Foreground="Black" OpacityMask="#FF50A9A3" Click="regsbtn_Click"/>
+            <Label x:Name="infoll" Content="" HorizontalAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="DWindow" Visibility="Collapsed">
+            <TextBox x:Name="names" HorizontalAlignment="Left" Margin="18,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="fileChoise" MaxHeight="20" HorizontalAlignment="Left" Margin="18,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273"/>
+            <Label Content="Код страны (например +7)" HorizontalAlignment="Left" Margin="18,69,0,0" VerticalAlignment="Top" Width="186"/>
+            <Label Content="Номер (например 1287468" HorizontalAlignment="Left" Margin="18,172,0,0" VerticalAlignment="Top" Width="273"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Click="Back_Click"/>
+            <Button Content="Загрузить" HorizontalAlignment="Left" Margin="108,331,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <TextBox x:Name="names_Copy" HorizontalAlignment="Left" Margin="22,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Код города (например 496)" HorizontalAlignment="Left" Margin="22,118,0,0" VerticalAlignment="Top" Width="194"/>
+            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="359,69,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="sname" HorizontalAlignment="Left" Margin="359,95,0,0" TextWrapping="Wrap" Text="Иванов" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Имя" HorizontalAlignment="Left" Margin="359,118,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="fname" HorizontalAlignment="Left" Margin="359,144,0,0" TextWrapping="Wrap" Text="Иван" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Отчество" HorizontalAlignment="Left" Margin="359,172,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="srdname"  HorizontalAlignment="Left" Margin="359,198,0,0" TextWrapping="Wrap" Text="Иванович" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Пол" HorizontalAlignment="Left" Margin="494,71,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="494,95,0,0" VerticalAlignment="Top" Width="120">
+                <Button Content="Мужской" Click="M_Click"/>
+                <Button Content="Женский" Click="F_Click"/>
+            </ComboBox>
+        </Grid>
+        <Grid x:Name="EWindow" Visibility="Collapsed">
+            <TextBox x:Name="names1" HorizontalAlignment="Left" Margin="18,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="fileChoise1" MaxHeight="20" HorizontalAlignment="Left" Margin="18,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="273"/>
+            <Label Content="Код страны (например +7)" HorizontalAlignment="Left" Margin="18,69,0,0" VerticalAlignment="Top" Width="186"/>
+            <Label Content="Номер (например 1287468" HorizontalAlignment="Left" Margin="18,172,0,0" VerticalAlignment="Top" Width="273"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Click="Back_Click"/>
+            <Button Content="Загрузить" HorizontalAlignment="Left" Margin="108,331,0,0" VerticalAlignment="Top" Click="Button_Click_11"/>
+            <TextBox x:Name="names_Copy1" HorizontalAlignment="Left" Margin="22,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Код города (например 496)" HorizontalAlignment="Left" Margin="22,118,0,0" VerticalAlignment="Top" Width="194"/>
+            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="359,69,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="sname1" HorizontalAlignment="Left" Margin="359,95,0,0" TextWrapping="Wrap" Text="Иванов" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Имя" HorizontalAlignment="Left" Margin="359,118,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="fname1" HorizontalAlignment="Left" Margin="359,144,0,0" TextWrapping="Wrap" Text="Иван" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Отчество" HorizontalAlignment="Left" Margin="359,172,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="srdname1"  HorizontalAlignment="Left" Margin="359,198,0,0" TextWrapping="Wrap" Text="Иванович" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Пол" HorizontalAlignment="Left" Margin="494,71,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cb" HorizontalAlignment="Left" Margin="494,95,0,0" VerticalAlignment="Top" Width="120">
+                <Button Content="Мужской" Click="M_Click"/>
+                <Button Content="Женский" Click="F_Click"/>
+            </ComboBox>
+            <Button Content="Удалить" HorizontalAlignment="Left" Margin="200,331,0,0" VerticalAlignment="Top" Click="Button_Click_12"/>
+        </Grid>
+        <Grid x:Name="RWindow" Visibility="Collapsed" Margin="10,0,0,0">
+            <Label Content="YouPupe" HorizontalAlignment="Left" Margin="38,36,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="regtbl" HorizontalAlignment="Left" Margin="6,86,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="regtbp" HorizontalAlignment="Left" Margin="6,122,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="9,62,0,0" VerticalAlignment="Top"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="9,99,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="logsbtn" Content="Войти" HorizontalAlignment="Left" Margin="47,157,0,0" VerticalAlignment="Top" Background="#FFC87575" BorderBrush="#FFC87575" Foreground="Black" OpacityMask="#FF50A9A3" Click="logbtn_Click"/>
+            <Button x:Name="regbtn" Content="Регистрация" HorizontalAlignment="Left" Margin="29,185,0,0" VerticalAlignment="Top" Background="#FFC87575" BorderBrush="#FFC87575" Foreground="Black" OpacityMask="#FF50A9A3" Click="regbtn_Click"/>
+            <Label x:Name="infolr" Content="" HorizontalAlignment="Left" Margin="60,217,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="admin" Visibility="Collapsed"   Margin="0,99,0,0" IsVisibleChanged="admin_IsVisibleChanged">
+            <DataGrid x:Name="db" ItemsSource="{DynamicResource ResourceKey=phones}" AutoGenerateColumns="True" MouseDoubleClick="Double_click">
+                <DataGrid.Resources>
+                    <col:ArrayList x:Key="phones">
+
+                    </col:ArrayList>
+                </DataGrid.Resources>
+            </DataGrid>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="722,-60,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        </Grid>
+
+
+    </Grid>
+</Window>
